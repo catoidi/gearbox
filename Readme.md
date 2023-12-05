@@ -1,17 +1,13 @@
+> [!NOTE]
+> **This is a fork of Gearbox designed for a personal project of mine.**
+> **If you're looking to use this for personal use, I suggest using the [parent repo](https://github.com/mmaulwurff/gearbox) instead.**
+
 # Gearbox
 
 Gearbox is an add-on for GZDoom engine that provides more convenient ways to
 select weapons and items.
 
 This mod is a part of [m8f's toolbox](https://mmaulwurff.github.io/pages/toolbox).
-
-![Blocks with Treasure Tech](screenshots/blocks-treasure-tech.png)
-
-(Blocks with [Treasure Tech](https://forum.zdoom.org/viewtopic.php?f=43&t=66995))
-
-[![Wheel with Heretic](screenshots/inventory-wheel-heretic.png)](https://youtu.be/WXZUBtbsY7Y)
-
-(Wheel with Heretic)
 
 ## How to Use
 
