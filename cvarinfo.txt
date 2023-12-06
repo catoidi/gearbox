@@ -17,7 +17,7 @@ user bool  gb_enable_dim       = true;
 user bool  gb_enable_blur      = true;
 user float gb_wheel_position   = 0.0;
 user float gb_wheel_scale      = 1.0;
-user bool  gb_wheel_tint       = true;
+user bool  gb_wheel_tint       = false;
 user int   gb_multiwheel_limit = 12;
 
 user float gb_blocks_position_x = 0.0;
