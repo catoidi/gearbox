@@ -219,6 +219,8 @@ class gb_EventHandler : EventHandler
     verifyViewModel(viewModel);
 
     gb_Dim.dim(alpha, mOptions);
+	
+	eventhandler.sendinterfaceevent(consolePlayer, "di_showwheel");
 
     switch (mOptions.getViewType())
     {
