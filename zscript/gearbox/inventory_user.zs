@@ -53,6 +53,7 @@ class gb_InventoryUser play
       }
       else
       {
+	    player.InvSel = item;
         player.useInventory(item);
         deleteFromQueue(i);
       }
