@@ -48,7 +48,7 @@ user bool gb_lock_positions   = false;
 user bool gb_enable_sounds    = true;
 user bool gb_frozen_can_open  = false;
 
-user int  gb_time_freeze      = 0;
+user int  gb_time_freeze      = 1;
 
 user float gb_mouse_sensitivity_x = 1.0;
 user float gb_mouse_sensitivity_y = 1.0;
