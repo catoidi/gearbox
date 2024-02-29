@@ -5,8 +5,6 @@ AddOptionMenu "DIHudOptions"
 {
 	StaticText ""
 	StaticText "Weapon Wheel", "Purple"
-	Option      "$GB_SELECT_ON_KEY_UP"         , gb_select_on_key_up         , OnOff
-	Tooltip "When enabled, the keybind switches from a toggle to a hold, and will select the highlighted option upon key release."
 	ColorPicker "$GB_COLOR"     , gb_color
 	Tooltip "Customize the color of the wheel."
 	Option      "$GB_DIM"       , gb_enable_dim     , OnOff
@@ -17,6 +15,16 @@ AddOptionMenu "DIHudOptions"
 	Tooltip "Control the horizontal position of the wheel."
 	Slider      "$GB_WHEEL_SCALE" , gb_wheel_scale    , 0.1, 2, 0.1, 1
 	Tooltip "Control the size of the wheel."
+}
+
+AddOptionMenu "DIGameplay"
+{
+	StaticText ""
+	StaticText "Weapon Wheel", "Purple"
+	Option      "$GB_SELECT_ON_KEY_UP"         , gb_select_on_key_up         , OnOff
+	Tooltip "When enabled, the keybind switches from a toggle to a hold, and will select the highlighted option upon key release."
+	Option      "$GB_FREEZE_TIME"              , gb_time_freeze              , OnOff
+	Tooltip "When enabled, the wheel will freeze all objects in the level, allowing you to safely navigate the menu without coming to harm.\n\nDoes not affect level geometry or scripts."
 }
 
 AddOptionMenu "BoxWeaponsControlMenu" after "ControlMessage"
