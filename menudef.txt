@@ -4,8 +4,6 @@
 OptionMenu "DIHudOptions_Gearbox"
 {
 	class "DITF_TooltipOptionMenu"
-	TooltipAppearance "", "gold", "TFTTBG"
-	TooltipGeometry 1.0, 0.8, 0.33, -1, -1, 1.0
 	Title "HUD Options (Weapon Wheel)"
 	Tooltip ""
 	ColorPicker "$GB_COLOR"     , gb_color
