@@ -1,10 +1,13 @@
 //simpler version of gearbox's option menu designed specifically for DI.
 //also makes use of libtooltipmenu, which a copy of is embedded into DI.
 
-AddOptionMenu "DIHudOptions"
+OptionMenu "DIHudOptions_Gearbox"
 {
-	StaticText ""
-	StaticText "Weapon Wheel", "Purple"
+	class "DITF_TooltipOptionMenu"
+	TooltipAppearance "", "gold", "TFTTBG"
+	TooltipGeometry 1.0, 0.8, 0.33, -1, -1, 1.0
+	Title "HUD Options (Weapon Wheel)"
+	Tooltip ""
 	ColorPicker "$GB_COLOR"     , gb_color
 	Tooltip "Customize the color of the wheel."
 	Option      "$GB_DIM"       , gb_enable_dim     , OnOff
@@ -15,16 +18,19 @@ AddOptionMenu "DIHudOptions"
 	Tooltip "Control the horizontal position of the wheel."
 	Slider      "$GB_WHEEL_SCALE" , gb_wheel_scale    , 0.1, 2, 0.1, 1
 	Tooltip "Control the size of the wheel."
-}
-
-AddOptionMenu "DIGameplay"
-{
 	StaticText ""
-	StaticText "Weapon Wheel", "Purple"
 	Option      "$GB_SELECT_ON_KEY_UP"         , gb_select_on_key_up         , OnOff
 	Tooltip "When enabled, the keybind switches from a toggle to a hold, and will select the highlighted option upon key release."
 	Option      "$GB_FREEZE_TIME"              , gb_time_freeze              , OnOff
 	Tooltip "When enabled, the wheel will freeze all objects in the level, allowing you to safely navigate the menu without coming to harm.\n\nDoes not affect level geometry or scripts."
+	Option "Show Depleted Items", "di_depletedperma", OnOff
+	Tooltip "When enabled, permanent consumable items will stay in your inventory bar, even when you currently have none."
+}
+
+AddOptionMenu "DIHudOptions"
+{
+	Submenu "Weapon Wheel Options", "DIHudOptions_Gearbox", 0, 1
+	Tooltip "Change the appearance/behavior of the weapon/consumable wheels here."
 }
 
 AddOptionMenu "BoxWeaponsControlMenu" after "ControlMessage"
