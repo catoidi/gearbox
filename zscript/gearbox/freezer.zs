@@ -31,6 +31,7 @@ class gb_Freezer play
   void freeze()
   {
     if (mWasFrozen) return;
+    if (Level.isFrozen()) return;
     mWasFrozen = true;
 
     int freezeMode = mOptions.getTimeFreezeMode();
