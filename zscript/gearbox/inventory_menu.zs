@@ -94,6 +94,7 @@ class gb_InventoryMenu
   void fill(out gb_ViewModel viewModel)
   {
     let item  = players[consolePlayer].mo.inv;
+    let plr = DI_PlayerBase(players[consolePlayer].mo);
     int index = 0;
     while (item != NULL)
     {
@@ -101,6 +102,21 @@ class gb_InventoryMenu
       {
         string tag  = item.getTag();
         TextureID icon = BaseStatusBar.getInventoryIcon(item, BaseStatusBar.DI_AltIconFirst);
+		if (plr)
+		{
+			if (item is "DIConsumable") 
+			{
+				let con = DIConsumable(item);
+				bool cantuse = (plr.inwave && con.blockinwave) || (!plr.inwave && con.blockinshop) || (con.forceblockuse) || (con.currentcooldown > 0) || (con.amount <= 0);
+				if (cantuse) {icon = TexMan.CheckForTexture("graphics/boxhud/NOITEM.png");}
+			}
+			else if (item is "DICustomConsumable") 
+			{
+				let con = DICustomConsumable(item);
+				bool cantuse = (plr.inwave && con.blockinwave) || (!plr.inwave && con.blockinshop) || (con.forceblockuse) || (con.currentcooldown > 0) || (con.amount <= 0);
+				if (cantuse) {icon = TexMan.CheckForTexture("graphics/boxhud/NOITEM.png");}
+			}
+		}
         viewModel.tags        .push(tag);
         viewModel.slots       .push(index + 1);
         viewModel.indices     .push(index);
